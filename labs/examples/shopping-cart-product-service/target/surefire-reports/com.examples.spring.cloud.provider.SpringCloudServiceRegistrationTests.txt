@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.examples.spring.cloud.provider.SpringCloudServiceRegistrationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.241 s - in com.examples.spring.cloud.provider.SpringCloudServiceRegistrationTests

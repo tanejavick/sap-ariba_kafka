@@ -1,0 +1,3 @@
+com\examples\spring\cloud\provider\SpringCloudServiceRegistration.class
+com\examples\spring\cloud\provider\model\Product.class
+com\examples\spring\cloud\provider\controller\ProductServiceController.class

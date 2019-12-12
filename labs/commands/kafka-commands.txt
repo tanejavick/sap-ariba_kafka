@@ -1,0 +1,16 @@
+#Kafka commands
+bin/kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test
+bin/kafka-topics.bat --list --bootstrap-server localhost:9092
+bin/kafka-topics.bat --describe --bootstrap-server localhost:9092 --topic test
+bin/kafka-console-producer.bat --broker-list localhost:9092 --topic test
+bin/kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --from-beginning
+bin/kafka-topics.bat --delete --bootstrap-server localhost:2181 --topic test
+
+bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
+bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group test-group
+
+
+#Case Study
+kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic ORDER_CREATED
+kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic ORDER_APPROVED
+kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic ORDER_REJECTED
