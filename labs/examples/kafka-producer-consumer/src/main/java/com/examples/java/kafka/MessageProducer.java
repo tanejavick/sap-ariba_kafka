@@ -55,7 +55,7 @@ public class MessageProducer {
     
     Producer<String, String> producer = new KafkaProducer
        <String, String>(props);
-          
+         
     for(int i = 0; i < 10; i++)
        producer.send(new ProducerRecord<String, String>(topicName, 
           Integer.toString(i), "Test Message: " + Integer.toString(i)));

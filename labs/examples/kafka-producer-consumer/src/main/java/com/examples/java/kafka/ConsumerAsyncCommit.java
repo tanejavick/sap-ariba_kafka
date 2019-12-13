@@ -2,12 +2,16 @@ package com.examples.java.kafka;
 
 import java.util.Properties;
 import java.util.Arrays;
+import java.util.Map;
+
 import org.apache.kafka.clients.consumer.KafkaConsumer;
+import org.apache.kafka.clients.consumer.OffsetAndMetadata;
+import org.apache.kafka.clients.consumer.OffsetCommitCallback;
 import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 
-public class Consumer {
+public class ConsumerAsyncCommit {
    public static void main(String[] args) throws Exception {
       if(args.length == 0){
          System.out.println("Enter topic name");
@@ -19,7 +23,7 @@ public class Consumer {
       
       props.put("bootstrap.servers", "localhost:9092");
       props.put("group.id", "demo");
-      props.put("enable.auto.commit", "true");
+      props.put("enable.auto.commit", "false");
       props.put("auto.commit.interval.ms", "1000");
       props.put("session.timeout.ms", "30000");
       props.put("key.deserializer", 
@@ -47,6 +51,9 @@ public class Consumer {
          // print the offset,key and value for the consumer records.
          System.out.printf("topic = %s, partition = %d, offset = %d, key = %s, value = %s\n", 
             record.topic(), record.partition(), record.offset(), record.key(), record.value());
+         
+         // commit the offset Asynchronously
+         consumer.commitAsync();
       }
    }
 }
