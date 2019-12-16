@@ -1,6 +1,7 @@
 package com.examples.java.kafka;
 
 import java.util.Properties;
+import java.time.Duration;
 import java.util.Arrays;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.TopicPartition;
@@ -34,19 +35,16 @@ public class Consumer {
       
       //print the topic name
       System.out.println("Subscribed to topic - " + topicName);
-      System.out.println("List of partitions - " + consumer.partitionsFor(topicName));
-      System.out.println("Partition assigned - " + consumer.assignment());
-      
-//      consumer.committed(new TopicPartition(topicName, ))
-      int i = 0;
+//      System.out.println("List of partitions - " + consumer.partitionsFor(topicName));
+//      System.out.println("Partition assigned - " + consumer.assignment());
       
       while (true) {
-         ConsumerRecords<String, String> records = consumer.poll(100);
+         ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
          for (ConsumerRecord<String, String> record : records)
          
-         // print the offset,key and value for the consumer records.
-         System.out.printf("topic = %s, partition = %d, offset = %d, key = %s, value = %s\n", 
-            record.topic(), record.partition(), record.offset(), record.key(), record.value());
+         // print the topic, partition, offset, timestamp, key and value for the consumer records.
+         System.out.printf("topic = %s, partition = %d, offset = %d, timestamp = %d, key = %s, value = %s\n", 
+            record.topic(), record.partition(), record.offset(), record.timestamp(), record.key(), record.value());
       }
    }
 }
