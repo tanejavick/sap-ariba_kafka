@@ -11,6 +11,7 @@ public class CustomPartitioner implements Partitioner {
 	
 	@Override
 	public void configure(Map<String, ?> configs) {
+		System.out.println("Partitioner specific config..");
 	}
 
 	@Override
@@ -24,5 +25,6 @@ public class CustomPartitioner implements Partitioner {
 
 	@Override
 	public void close() {
+		System.out.println("Cleanup..");
 	}
 }

@@ -3,6 +3,8 @@ package com.examples.java.kafka;
 import java.util.Properties;
 import java.time.Duration;
 import java.util.Arrays;
+import java.util.Collections;
+
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
@@ -19,7 +21,7 @@ public class Consumer {
       Properties props = new Properties();
       
       props.put("bootstrap.servers", "localhost:9092");
-      props.put("group.id", "demo");
+      props.put("group.id", "test-group");
       props.put("enable.auto.commit", "true");
       props.put("auto.commit.interval.ms", "1000");
       props.put("session.timeout.ms", "30000");
@@ -35,8 +37,6 @@ public class Consumer {
       
       //print the topic name
       System.out.println("Subscribed to topic - " + topicName);
-//      System.out.println("List of partitions - " + consumer.partitionsFor(topicName));
-//      System.out.println("Partition assigned - " + consumer.assignment());
       
       while (true) {
          ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
