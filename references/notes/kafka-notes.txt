@@ -24,6 +24,7 @@ Kafka Introduction
 
 Kafka Producer
 Kafka Consumer
+
 Kafka Connector
 Kafka Streams
 

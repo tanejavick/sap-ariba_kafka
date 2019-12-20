@@ -7,6 +7,7 @@ bin\windows\kafka-console-producer.bat --bootstrap-server localhost:9092 --topic
 bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --from-beginning
 bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --group test-group
 bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --partition 0 --offset earliest
+bin\windows\kafka-topics.bat --alter --bootstrap-server localhost:9092 --topic test --partitions 3
 bin\windows\kafka-topics.bat --delete --bootstrap-server localhost:9092 --topic test
 
 #consumer groups
