@@ -1,8 +1,8 @@
 #Installation (Windows)
 STEP 1: Download Kafka from https://kafka.apache.org/downloads
-STEP 2: Extract Kafka to local director e.g: C:\Programs\Kafka\kafka-2.3.0
-STEP 3: Open %KAFKA_HOME%\config\zookeeper.properties and set dataDir=/Programs/Kafka/kafka-2.3.0/data/zookeeper
-STEP 4: Open %KAFKA_HOME%\config\server.properties and set log.dirs=/Programs/Kafka/kafka-2.3.0/data/kafka-logs
+STEP 2: Extract Kafka to local directory e.g: C:\Programs\Kafka\kafka-2.4.0
+STEP 3: Open %KAFKA_HOME%\config\zookeeper.properties and set dataDir=/Programs/Kafka/kafka-2.4.0/data/zookeeper
+STEP 4: Open %KAFKA_HOME%\config\server.properties and set log.dirs=/Programs/Kafka/kafka-2.4.0/data/kafka-logs
 STEP 5: Create %KAFKA_HOME%\data directory [Optional]
 #Starting (Windows)
 STEP 6: Open Command Prompt in Admin mode and Navigate to %KAFKA_HOME%
@@ -15,11 +15,11 @@ STEP 9: Start Kafka> bin\windows\kafka-server-start.bat config\server.properties
 #Kafka Installation (*nix/mac)
 STEP 1: 
 cd ~/Downloads
-curl https://www-eu.apache.org/dist/kafka/2.3.0/kafka_2.12-2.3.0.tgz -o kafka-2.3.0.tgz
-STEP 2: sudo tar xzvf kafka-2.3.0.tgz -C ~/kafka-training/programs
-cd ~/kafka-training/programs/kafka-2.3.0            (=> verify installation)
-STEP 3: Open %KAFKA_HOME%\config\zookeeper.properties and set dataDir=/home/user/kafka-training/programs/kafka-2.3.0/data/zookeeper
-STEP 4: Open %KAFKA_HOME%\config\server.properties and set log.dirs=/homeuser//kafka-training/programs/kafka-2.3.0/data/kafka-logs
+curl https://www-eu.apache.org/dist/kafka/2.4.0/kafka_2.12-2.4.0.tgz -o kafka-2.4.0.tgz
+STEP 2: sudo tar xzvf kafka-2.4.0.tgz -C ~/kafka-training/programs
+cd ~/kafka-training/programs/kafka-2.4.0            (=> verify installation)
+STEP 3: Open %KAFKA_HOME%\config\zookeeper.properties and set dataDir=/home/user/kafka-training/programs/kafka-2.4.0/data/zookeeper
+STEP 4: Open %KAFKA_HOME%\config\server.properties and set log.dirs=/home/user//kafka-training/programs/kafka-2.4.0/data/kafka-logs
 STEP 5: Create %KAFKA_HOME%\data directory [Optional]
 
 #Starting (*nix/mac)

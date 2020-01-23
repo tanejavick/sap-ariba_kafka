@@ -4,7 +4,7 @@ Kafka Introduction
 	- Background
 		- Developed by Linkedin
 		- Open sourced in 2011
-		- Current version 2.3.1
+		- Current version 2.4.0
 	- Kafka Concepts
 		- Topic			=> stream of records
 		- Partition		=> portion of topic divided based on some logic to scale the storage and improve parallelism 

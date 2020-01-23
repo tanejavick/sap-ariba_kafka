@@ -3,7 +3,7 @@
 bin\windows\kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test
 bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092	
 bin\windows\kafka-topics.bat --describe --bootstrap-server localhost:9092 --topic test
-bin\windows\kafka-console-producer.bat --bootstrap-server localhost:9092 --topic test
+bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic test
 bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --from-beginning
 bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --group test-group
 bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --partition 0 --offset earliest
@@ -13,6 +13,7 @@ bin\windows\kafka-topics.bat --delete --bootstrap-server localhost:9092 --topic 
 #consumer groups
 bin\windows\kafka-consumer-groups.bat --bootstrap-server localhost:9092 --list
 bin\windows\kafka-consumer-groups.bat --bootstrap-server localhost:9092 --describe --group test-group
+bin\windows\kafka-consumer-groups.bat --bootstrap-server localhost:9092 --describe --all-groups
 
 #kafka configs
 kafka-configs.bat --zookeeper localhost:2181 --describe --entity-type clients
@@ -25,7 +26,7 @@ bin\windows\kafka-consumer-groups.bat --bootstrap-server localhost:9092 --reset-
 bin\windows\kafka-delete-records.bat --bootstrap-server localhost:9092 --offset-json-file delete-records.json
 
 #segment decoding
-bin\windows\kafka-run-class.bat kafka.tools.DumpLogSegments --deep-iteration --print-data-log --files data\kafka-logs\test-1\00000000000000000000.log
+bin\windows\kafka-run-class.bat kafka.tools.DumpLogSegments --deep-iteration --print-data-log --files data\kafka-logs\test-0\00000000000000000000.log
 
 #kafka manager
 C:\kafka-manager\bin\kafka-manager.bat
