@@ -52,7 +52,7 @@ public class CustomerService {
 		customerRepo.deleteAll();
 	}
 	
-    @KafkaListener(topics = "ORDER_CREATED", groupId="order-service")
+    @KafkaListener(topics = "ORDER_CREATED", groupId="customer-service")
     public void listenOrderApproval(ConsumerRecord<?, ?> cr) throws Exception {
         System.out.println("###################Order Created: " + cr.value());
 

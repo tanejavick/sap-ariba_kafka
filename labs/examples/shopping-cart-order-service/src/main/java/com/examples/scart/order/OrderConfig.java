@@ -19,7 +19,7 @@ import org.springframework.kafka.support.serializer.JsonSerializer;
 
 import com.examples.scart.order.model.Order;
 
-//@Configuration
+@Configuration
 public class OrderConfig {
 	
 	  @Value("${spring.kafka.bootstrap-servers}")
