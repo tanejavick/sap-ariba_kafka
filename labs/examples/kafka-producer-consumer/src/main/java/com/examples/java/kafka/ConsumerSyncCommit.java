@@ -13,12 +13,13 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 
 public class ConsumerSyncCommit {
 	public static void main(String[] args) throws Exception {
-		if (args.length == 0) {
-			System.out.println("Enter topic name");
-			return;
+		// default topic
+		String topicName = "test";
+
+		if(args.length == 0){
+			topicName = args[0].toString();
 		}
-		// Kafka consumer configuration settings
-		String topicName = args[0].toString();
+		
 		boolean running = true;
 		Properties props = new Properties();
 

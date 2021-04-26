@@ -14,15 +14,13 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 public class MessageProducerWithPartitioner {
 
 	public static void main(String[] args) throws Exception {
+		
+		// default topic
+		String topicName = "test";
 
-		// Check arguments length value
-		if (args.length == 0) {
-			System.out.println("Enter topic name");
-			return;
+		if(args.length == 0){
+			topicName = args[0].toString();
 		}
-
-		// Assign topicName to string variable
-		String topicName = args[0].toString();
 
 		// create instance for properties to access producer configs
 		Properties props = new Properties();

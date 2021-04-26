@@ -8,12 +8,13 @@ public class ConsumerMain {
 
 	public static void main(String[] args) {
 
-		if (args.length == 0) {
-			System.out.println("Enter topic name");
-			return;
+		// default topic
+		String topicName = "test";
+
+		if(args.length == 0){
+			topicName = args[0].toString();
 		}
-		// Kafka consumer configuration settings
-		String topicName = args[0].toString();
+		
 		Properties props = new Properties();
 
 		props.put("bootstrap.servers", "localhost:9092");
